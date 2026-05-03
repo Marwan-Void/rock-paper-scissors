@@ -1,66 +1,89 @@
-import Image from "next/image";
+import { JSX } from "react";
 import styles from "./page.module.css";
+import { 
+  parent_variants, item_variants, MotionLink, MotionA, MotionMain, MotionSpan, MotionP, MotionH1, MotionDiv, MotionFooter, MotionH2, 
+  MotionSection,
+  MotionArticle,
+  MotionHeader
+} from "./variants";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { EMailBtn } from "@/components/components";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <MotionDiv className={styles.page}>
+      <MotionHeader className={styles.page_header} variants={parent_variants} initial="hidden" whileInView="visible">
+        <MotionP
+          className={styles.page_header_name}
+          variants={item_variants}
+        >Rock, Paper, Scissors</MotionP>
+      </MotionHeader>
+      <MotionMain
+        className={styles.page_main}
+        variants={parent_variants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <MotionSection className={styles.def_sec} variants={item_variants}>
+          <MotionSpan
+            className={styles.def_sec_name}
+          >Marwan Void</MotionSpan>
+          <MotionH1
+            className={styles.main_title}
+          >Rock, Paper And Scissors Game</MotionH1>
+          <MotionP
+            className={styles.main_desc}
+          > A Game Made By Marwan Void </MotionP>
+        </MotionSection>
+        <MotionSection className={styles.game_cards_sec} variants={item_variants}>
+          <MotionArticle className={styles.cards_article}>
+            <MotionDiv
+              className={`${styles.card} ${styles.rock_card}`}
+              layout
+            > Rock </MotionDiv>
+            <MotionDiv
+              className={`${styles.card} ${styles.paper_card}`}
+              layout
+            > Paper </MotionDiv>
+            <MotionDiv
+              className={`${styles.card} ${styles.scissors_card}`}
+              layout
+            > Scissors </MotionDiv>
+          </MotionArticle>
+        </MotionSection>
+        <MotionSection variants={item_variants} className={styles.play_sec}>
+          <MotionLink
+            className={styles.play_btn}
+            href={"./game"}
+            whileHover={{ opacity: 0.9 }}
+            whileTap={{ scale: 0.9 }}
+          >Play Now</MotionLink>
+        </MotionSection>
+      </MotionMain>
+      <MotionFooter
+        className={styles.footer}
+        variants={parent_variants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <MotionDiv variants={item_variants} className={styles.footer_info}>
+          <MotionH2 className={styles.footer_name}>Marwan Void</MotionH2>
+          <MotionP className={styles.footer_copyright}>
+            &copy; 2026 - {new Date().getFullYear()} Marwan Void
+          </MotionP>
+          <MotionA className={styles.repo_link}>Github Repo</MotionA>
+        </MotionDiv>
+        <MotionDiv variants={item_variants} className={styles.footer_links}>
+          <MotionA className={styles.link} href="https://github.com/Marwan-Void" target="_blank"><FontAwesomeIcon icon={faGithub} /></MotionA>
+          <MotionA className={styles.link} href="https://www.facebook.com/marwan.mohamed.codex.dev/" target="_blank"><FontAwesomeIcon icon={faFacebook} /></MotionA>
+          <EMailBtn className={styles.link} />
+        </MotionDiv>
+      </MotionFooter>
+    </MotionDiv>
   );
 }
