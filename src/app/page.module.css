@@ -59,7 +59,7 @@
   font-size: 2.5rem;
   font-weight: normal;
   color: #3366cc;
-  -webkit-text-stroke: 0.4px #07172a;
+  -webkit-text-stroke: 1px #07172a;
   paint-order: stroke fill;
   font-family: "Noto Serif", serif;
 }

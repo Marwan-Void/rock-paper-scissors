@@ -1,10 +1,10 @@
 'use client';
 import { JSX } from "react";
-import { MotionA } from "@/app/variants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faG } from "@fortawesome/free-solid-svg-icons";
+import { FooterLink } from "./FooterLink";
 
-export function EMailBtn({className}: {className: string}): JSX.Element {
+export function EMailBtn(): JSX.Element {
     function handleMailClick(): string {
         // e: (MouseEvent | TouchEvent | PointerEvent | string)
         // e.preventDefault();
@@ -15,8 +15,6 @@ export function EMailBtn({className}: {className: string}): JSX.Element {
     }
 
     return (
-        <MotionA href={`${handleMailClick()}`} className={className} title="Send Me Mail">
-            <FontAwesomeIcon icon={faG} />
-        </MotionA>
+        <FooterLink dest={`${handleMailClick()}`} icon={<FontAwesomeIcon icon={faG} />} title="Send Me Mail"/>
     );
 }

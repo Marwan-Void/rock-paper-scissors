@@ -2,7 +2,8 @@ import { itemVariants, MotionA, MotionDiv, MotionFooter, MotionH2, MotionHeader,
 import { JSX } from "react";
 import styles from "@/app/page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faLinktree, faPinterestP, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { FooterLink } from "./FooterLink";
 // import { EMailBtn } from "./EmailBtn";
 
 export function PageHeader(): JSX.Element {
@@ -34,9 +35,12 @@ export function PageFooter(): JSX.Element {
             <MotionA href="https://github.com/Marwan-Void/rock-paper-scissors" target="_blank" className={styles.repo_link}>Github Repo</MotionA>
             </MotionDiv>
             <MotionDiv variants={itemVariants} className={styles.footer_links}>
-            <MotionA className={`${styles.pointer} ${styles.link}`} href="https://github.com/Marwan-Void" target="_blank"><FontAwesomeIcon icon={faGithub} /></MotionA>
-            <MotionA className={`${styles.pointer} ${styles.link}`} href="https://www.facebook.com/marwan.mohamed.codex.dev/" target="_blank"><FontAwesomeIcon icon={faFacebook} /></MotionA>
-            {/* <EMailBtn className={styles.link} /> */}
+            <FooterLink dest="https://github.com/Marwan-Void" icon={<FontAwesomeIcon icon={faGithub} />} />
+            <FooterLink dest="https://www.facebook.com/marwan.mohamed.codex.dev/" icon={<FontAwesomeIcon icon={faFacebook} />} />
+            <FooterLink dest="https://linktr.ee/Marwan_Void" icon={<FontAwesomeIcon icon={faLinktree} />} />
+            <FooterLink dest="https://youtube.com/@Marwan_Void" icon={<FontAwesomeIcon icon={faYoutube} />} />
+            <FooterLink dest="https://www.pinterest.com/Marwan_Void/" icon={<FontAwesomeIcon icon={faPinterestP} />} />
+            {/* <EMailBtn /> */}
             </MotionDiv>
         </MotionFooter>
     );
