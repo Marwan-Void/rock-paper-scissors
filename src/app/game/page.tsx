@@ -1,14 +1,16 @@
-'use client';
 import { JSX } from "react";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import { parentVariants, itemVariants, MotionLink } from "../variants";
+import { MotionDiv, MotionLink, MotionMain } from "../variants";
+import { PageFooter, PageHeader } from "@/components/header&footer";
 
 export default function Game(): JSX.Element {
     return (
-        <div className={styles.page}>
-            <MotionLink href={"../"}>Nigga</MotionLink>
-        </div>
+        <MotionDiv>
+            <PageHeader />
+            <MotionMain>
+                <MotionLink href={"../"}>Back</MotionLink>
+            </MotionMain>
+            <PageFooter />
+        </MotionDiv>
     );
 }

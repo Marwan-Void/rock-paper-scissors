@@ -8,7 +8,7 @@
   color: #07172a;
 }
 
-.page, .page_header, .def_sec, .game_cards_sec, .cards_article, .card, .play_sec, .page_main {
+.def_sec, .game_cards_sec, .cards_article, .card, .play_sec, .page_header, .page, .page_main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,6 +28,10 @@
 
 .italic {
   font-style: italic;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .page {
@@ -58,6 +62,54 @@
   -webkit-text-stroke: 0.4px #07172a;
   paint-order: stroke fill;
   font-family: "Noto Serif", serif;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #deeafe;
+  padding: 20px;
+  color: #07172a;
+}
+.footer * {
+  font-family: serif;
+}
+
+.footer_info {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer_name {
+  font-weight: normal;
+}
+
+.footer_copyright, .repo_link, .link {
+  opacity: 0.5;
+}
+
+.repo_link {
+  display: block;
+  padding: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.repo_link:hover {
+  opacity: 0.8;
+}
+
+.footer_links {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
 }
 
 .def_sec {
@@ -164,58 +216,6 @@
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
-}
-
-.footer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: #deeafe;
-  padding: 20px;
-  color: #07172a;
-}
-.footer * {
-  font-family: serif;
-}
-
-.footer_info {
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer_name {
-  font-weight: normal;
-}
-
-.footer_copyright, .repo_link, .link {
-  opacity: 0.5;
-}
-
-.repo_link {
-  display: block;
-  padding: 5px;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: 0.7s ease;
-  -webkit-transition: 0.7s ease;
-  -moz-transition: 0.7s ease;
-  -ms-transition: 0.7s ease;
-  -o-transition: 0.7s ease;
-}
-.repo_link:hover {
-  opacity: 0.8;
-}
-
-.footer_links {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  gap: 10px;
-}
-
-.link {
-  cursor: pointer;
 }
 
 @keyframes float {
