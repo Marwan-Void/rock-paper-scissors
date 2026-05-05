@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rock, Paper, Scissors Game - Marwan Void",
+  title: "RPS Void - Marwan Void",
   description: "A Simple Rock, Paper, Scissors Game Made BY Marwan Void Using Next.js",
 };
 

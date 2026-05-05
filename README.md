@@ -13,6 +13,7 @@ And You Draw If You Are Same, You Win If You Are {
 1. React + Next.js + TSX
 2. Sass (.scss)
 3. Framer Motion Library
+4. Font Awesome React
 
 #### If You Have Any Advice Or You Found Any Issue, Please Tell Me.
 

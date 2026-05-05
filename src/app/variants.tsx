@@ -15,7 +15,7 @@ export const MotionSection = motion.section;
 export const MotionArticle = motion.article;
 export const MotionHeader = motion.header;
 
-export const parent_variants: Variants = {
+export const parentVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -24,7 +24,7 @@ export const parent_variants: Variants = {
     },
   },
 };
-export const item_variants: Variants = {
+export const itemVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
   visible: { 
     opacity: 1, 

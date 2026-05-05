@@ -5,15 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faG } from "@fortawesome/free-solid-svg-icons";
 
 export function EMailBtn({className}: {className: string}): JSX.Element {
-    function handleMailClick(e: (MouseEvent | TouchEvent | PointerEvent)): void {
-        e.preventDefault();
+    function handleMailClick(): string {
+        // e: (MouseEvent | TouchEvent | PointerEvent | string)
+        // e.preventDefault();
         const user: string = "mrawan10152011";
         const domain: string = "gmail.com";
-        window.location.href = `mailto:${user}@${domain}`;
+        // window.location.href = `mailto:${user}@${domain}`;
+        return (`mailto:${user}@${domain}`);
     }
 
     return (
-        <MotionA onTap={handleMailClick} className={className} title="Send Me Mail">
+        <MotionA href={`${handleMailClick()}`} className={className} title="Send Me Mail">
             <FontAwesomeIcon icon={faG} />
         </MotionA>
     );

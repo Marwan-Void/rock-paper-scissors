@@ -1,35 +1,4 @@
 @use "./sass-methods" as *;
-.page {
-    @extend %flex-center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
-    position: relative;
-    color: $dark-color;
-}
-
-.page_header {
-    @extend %flex-center;
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: $accent-blue;
-    color: $primary-blue;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 0 0 3px $dark-color;
-}
-
-.page_header_name {
-    font-style: italic;
-    font-size: 1.5em;
-    font-weight: normal;
-    color: $primary-blue;
-    -webkit-text-stroke: 0.4px $dark-color;
-    paint-order: stroke fill;
-    font-family: "Noto Serif", serif;
-}
 
 .def_sec {
     @extend %flex-center;
@@ -117,54 +86,6 @@
     background-color: $primary-blue;
     color: $light-background;
     @include border-radius();
-}
-
-.footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: $accent-blue;
-    padding: 20px;
-    color: $dark-color;
-    & * {
-        font-family: serif;
-    }
-}
-
-.footer_info {
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer_name {
-    font-weight: normal;
-}
-
-.footer_copyright, .repo_link, .link {
-    opacity: 0.5;
-}
-
-.repo_link {
-    display: block;
-    padding: 5px;
-    text-decoration: underline;
-    cursor: pointer;
-    @include transition();
-    &:hover {
-        opacity: 0.8;
-    }
-}
-
-.footer_links {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 10px;
-}
-
-.link {
-    cursor: pointer;
 }
 
 @keyframes float {
